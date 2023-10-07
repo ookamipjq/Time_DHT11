@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmsis-csolution.build",
+			"solution": "${command:cmsis-csolution.getSolutionPath}",
+			"project": "${command:cmsis-csolution.getProjectPath}",
+			"buildType": "${command:cmsis-csolution.getBuildType}",
+			"targetType": "${command:cmsis-csolution.getTargetType}",
+			"rebuild": false,
+			"problemMatcher": [],
+			"label": "cmsis-csolution.build: Build"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cl.exe 生成活动文件",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"${file}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"detail": "编译器: cl.exe"
+		}
+	]
+}
